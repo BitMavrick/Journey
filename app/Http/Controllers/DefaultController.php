@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return view('user.index');
     }
+
+    public function product()
+    {
+        return view('user.product-details');
+    }
 }
