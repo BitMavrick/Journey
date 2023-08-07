@@ -1,33 +1,4 @@
-<!doctype html>
-<html lang="zxx">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>aranoz</title>
-    <link rel="icon" href="/user/img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/user/css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="/user/css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="/user/css/owl.carousel.min.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="/user/css/all.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="/user/css/flaticon.css">
-    <link rel="stylesheet" href="/user/css/themify-icons.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="/user/css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="/user/css/slick.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="/user/css/style.css">
-
-</head>
-
-<body>
+<x-user.master>
     <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
@@ -35,7 +6,9 @@
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html"> <img src="/user/img/logo.png" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
 
@@ -45,7 +18,8 @@
                                     <a class="nav-link" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Shop
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
@@ -55,7 +29,8 @@
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         pages
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
@@ -68,7 +43,8 @@
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         blog
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
@@ -86,8 +62,8 @@
                             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <a href=""><i class="ti-heart"></i></a>
                             <div class="dropdown cart">
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <!-- <i class="fas fa-cart-plus"></i> -->
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="ti-layout-grid3-alt"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
@@ -458,7 +434,8 @@
                             </div>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="enter email address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="enter email address"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <a href="#" class="input-group-text btn_2" id="basic-addon2">book now</a>
                             </div>
@@ -535,7 +512,8 @@
                         <h2>Subscribe to get Updated
                             with new offers</h2>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="enter email address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="enter email address"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <a href="#" class="input-group-text btn_2" id="basic-addon2">subscribe now</a>
                             </div>
@@ -601,9 +579,14 @@
                         <p>Heaven fruitful doesn't over lesser in days. Appear creeping
                         </p>
                         <div id="mc_embed_signup">
-                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part">
-                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
-                                <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">subscribe</button>
+                            <form target="_blank"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                method="get" class="subscribe_form relative mail_part">
+                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                    class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = ' Email Address '">
+                                <button type="submit" name="submit" id="newsletter-submit"
+                                    class="email_icon newsletter-submit button-contactForm">subscribe</button>
                                 <div class="mt-10 info"></div>
                             </form>
                         </div>
@@ -620,8 +603,10 @@
                             <P>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;<script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="ti-heart"
+                                    aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                    target="_blank">Colorlib</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </P>
                         </div>
@@ -641,33 +626,4 @@
         </div>
     </footer>
     <!--::footer_part end::-->
-
-    <!-- jquery plugins here-->
-    <script src="/user/js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="/user/js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="/user/js/bootstrap.min.js"></script>
-    <!-- easing js -->
-    <script src="/user/js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="/user/js/swiper.min.js"></script>
-    <!-- swiper js -->
-    <script src="/user/js/masonry.pkgd.js"></script>
-    <!-- particles js -->
-    <script src="/user/js/owl.carousel.min.js"></script>
-    <script src="/user/js/jquery.nice-select.min.js"></script>
-    <!-- slick js -->
-    <script src="/user/js/slick.min.js"></script>
-    <script src="/user/js/jquery.counterup.min.js"></script>
-    <script src="/user/js/waypoints.min.js"></script>
-    <script src="/user/js/contact.js"></script>
-    <script src="/user/js/jquery.ajaxchimp.min.js"></script>
-    <script src="/user/js/jquery.form.js"></script>
-    <script src="/user/js/jquery.validate.min.js"></script>
-    <script src="/user/js/mail-script.js"></script>
-    <!-- custom js -->
-    <script src="/user/js/custom.js"></script>
-</body>
-
-</html>
+</x-user.master>
