@@ -1,0 +1,31 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+
+class UserSeeder extends Seeder
+{
+    public function run()
+    {
+        User::factory()
+            ->count(15)
+            ->hasJournals(10)
+            ->create();
+
+        User::factory()
+            ->count(20)
+            ->hasJournals(5)
+            ->create();
+
+        User::factory()
+            ->count(5)
+            ->hasJournals(1)
+            ->create();
+
+        User::factory()
+            ->count(10)
+            ->create();
+    }
+}
