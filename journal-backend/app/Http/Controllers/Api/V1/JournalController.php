@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Api\V1;
 use App\Models\Journal;
 use App\Http\Requests\StoreJournalRequest;
 use App\Http\Requests\UpdateJournalRequest;
-use App\Http\Controllers\Controller; 
+use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\JournalResource;
 
 class JournalController extends Controller
 {
@@ -16,7 +17,7 @@ class JournalController extends Controller
      */
     public function index()
     {
-        //
+        return Journal::all();
     }
 
     /**
@@ -48,7 +49,7 @@ class JournalController extends Controller
      */
     public function show(Journal $journal)
     {
-        //
+        return new JournalResource($journal);
     }
 
     /**
