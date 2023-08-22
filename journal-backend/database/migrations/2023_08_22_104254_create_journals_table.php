@@ -10,6 +10,7 @@ class CreateJournalsTable extends Migration
     {
         Schema::create('journals', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('mood'); // very bad, bad, neutral, good, very good
             $table->text('body');

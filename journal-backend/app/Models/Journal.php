@@ -1,16 +1,16 @@
- <?php
+<?php
 
-    namespace App\Models;
+namespace App\Models;
 
-    use Illuminate\Database\Eloquent\Factories\HasFactory;
-    use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-    class Journal extends Model
+class Journal extends Model
+{
+    use HasFactory;
+
+    public function user()
     {
-        use HasFactory;
-
-        public function user()
-        {
-            return $this->belongsTo(User::class);
-        }
+        return $this->belongsTo(User::class);
     }
+}
