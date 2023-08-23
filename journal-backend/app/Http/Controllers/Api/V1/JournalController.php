@@ -9,13 +9,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\JournalResource;
 use App\Http\Resources\V1\JournalCollection;
 use Illuminate\Http\Request;
-use App\Services\V1\JournalQuery;
+use App\Filters\V1\JournalsFilter;
 
 class JournalController extends Controller
 {
     public function index(Request $request)
     {
-        $filter = new JournalQuery();
+        $filter = new JournalsFilter();
         $queryItems = $filter->transform($request); // ['column', 'operator', 'value']
 
         if (count($queryItems) == 0) {

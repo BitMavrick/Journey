@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Services\V1;
+namespace App\Filters\V1;
 
 use Illuminate\Http\Request;
+use App\Filters\ApiFilter;
 
-class JournalQuery
+class JournalsFilter extends ApiFilter
 {
     protected $safeParms = [
         'userId' => ['eq', 'gt']
