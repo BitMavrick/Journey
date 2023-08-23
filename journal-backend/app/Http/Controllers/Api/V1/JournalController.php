@@ -7,6 +7,7 @@ use App\Http\Requests\StoreJournalRequest;
 use App\Http\Requests\UpdateJournalRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\JournalResource;
+use App\Http\Resources\V1\JournalCollection;
 
 class JournalController extends Controller
 {
@@ -17,7 +18,7 @@ class JournalController extends Controller
      */
     public function index()
     {
-        return Journal::all();
+        return new JournalCollection(Journal::all());
     }
 
     /**
