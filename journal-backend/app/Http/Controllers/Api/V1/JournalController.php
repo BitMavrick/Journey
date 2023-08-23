@@ -21,7 +21,8 @@ class JournalController extends Controller
         if (count($queryItems) == 0) {
             return new JournalCollection(Journal::paginate());
         } else {
-            return new JournalCollection(Journal::where($queryItems)->paginate()); // ->get() maybe required
+            $journals = Journal::where($queryItems)->paginate();
+            return new JournalCollection($journals->appends($request->query())); // ->get() maybe required
         }
     }
 
