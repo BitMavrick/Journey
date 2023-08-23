@@ -8,35 +8,30 @@ use App\Http\Requests\UpdateJournalRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\JournalResource;
 use App\Http\Resources\V1\JournalCollection;
+use Illuminate\Http\Request;
+use App\Services\V1\JournalQuery;
 
 class JournalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(Request $request)
     {
-        return new JournalCollection(Journal::all());
+        $filter = new JournalQuery();
+        $queryItems = $filter->transform($request); // ['column', 'operator', 'value']
+
+        if (count($queryItems) == 0) {
+            return new JournalCollection(Journal::paginate());
+        } else {
+            return new JournalCollection(Journal::where($queryItems)->paginate()); // ->get() maybe required
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreJournalRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(StoreJournalRequest $request)
     {
         //
