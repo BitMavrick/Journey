@@ -18,7 +18,14 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-        return new UserResource(User::create($request->all()));
+        $user = new UserResource(User::create($request->all()));
+
+        if ($user) {
+            return response()->json([
+                'data' => $user,
+                'message' => 'User created successfully 404'
+            ], 201);
+        }
     }
 
     public function show(User $user)
