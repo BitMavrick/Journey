@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\UserResource;
 use App\Http\Resources\V1\UserCollection;
 use App\Http\Requests\V1\StoreUserRequest;
+use App\Http\Requests\V1\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -31,5 +32,17 @@ class UserController extends Controller
     public function show(User $user)
     {
         return new UserResource($user);
+    }
+
+    public function update(UpdateUserRequest $request, User $user)
+    {
+        $user->update($request->all());
+
+        if ($user) {
+            return response()->json([
+                'data' => $user,
+                'message' => 'User updated successfully'
+            ], 200);
+        }
     }
 }

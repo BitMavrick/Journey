@@ -3,28 +3,32 @@
 namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class UpdateUserlRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
-        return [
-            //
-        ];
+        $method = $this->method();
+        $userId = $this->route('user');
+
+        if ($method == 'PUT') {
+            return [
+                'name' => ['required'],
+                'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($userId)],
+                'password' => ['required'],
+            ];
+        } else {
+            return [
+                'name' => ['sometimes', 'required'],
+                'email' => ['sometimes', 'required', 'email', Rule::unique('users', 'email')->ignore($userId)],
+                'password' => ['sometimes', 'required'],
+            ];
+        }
     }
 }
