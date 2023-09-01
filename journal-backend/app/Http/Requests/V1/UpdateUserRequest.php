@@ -21,7 +21,6 @@ class UpdateUserRequest extends FormRequest
             return [
                 'name' => ['required'],
                 'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($userId)],
-                'password' => ['required'],
             ];
         } else if ($method == 'PATCH') {
             return [
