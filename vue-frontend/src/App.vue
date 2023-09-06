@@ -3,6 +3,9 @@
     <Sidebar />
     <div class="container-fluid page-body-wrapper">
       <Navbar />
+      <div class="main-panel">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
