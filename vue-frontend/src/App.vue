@@ -1,13 +1,15 @@
 <template>
-  <div class="container-scroller">
-    <Sidebar v-if="showSidebar" />
+  <div v-if="showSidebar" class="container-scroller">
+    <Sidebar />
     <div class="container-fluid page-body-wrapper" :class="[{ 'full-page-wrapper': showAdditionalClass }]">
-      <Navbar v-if="showSidebar" />
+      <Navbar />
       <div class="main-panel">
         <router-view />
       </div>
     </div>
   </div>
+
+  <router-view v-if="!showSidebar" />
 </template>
 
 <script>
