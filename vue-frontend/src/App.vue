@@ -5,6 +5,7 @@
       <Navbar />
       <div class="main-panel">
         <router-view />
+        <Footer />
       </div>
     </div>
   </div>
@@ -15,12 +16,14 @@
 <script>
 import Sidebar from '@/components/Sidebar.vue'
 import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Sidebar,
     Navbar,
+    Footer,
   },
   computed: {
     showSidebar() {
