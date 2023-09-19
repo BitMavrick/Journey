@@ -6,14 +6,14 @@
                     <div class="card col-lg-4 mx-auto">
                         <div class="card-body px-5 py-5">
                             <h3 class="card-title text-left mb-3">Login</h3>
-                            <form>
+                            <form @submit.prevent="submit">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control p_input">
+                                    <input v-model="data.email" type="email" class="form-control p_input">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="text" class="form-control p_input">
+                                    <input v-model="data.password" type="password" class="form-control p_input">
                                 </div>
                                 <br>
                                 <div class="text-center">
@@ -35,3 +35,40 @@
         <!-- page-body-wrapper ends -->
     </div>
 </template>
+
+
+<script>
+
+import { reactive } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default {
+    name: "Login",
+    setup() {
+        const data = reactive({
+            email: '',
+            password: ''
+        });
+
+        const router = useRouter();
+
+        const submit = async () => {
+            await fetch('http://localhost:8000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify(data)
+            });
+
+            await router.push('/');
+        }
+
+        return {
+            data,
+            submit
+        }
+    }
+};
+</script>

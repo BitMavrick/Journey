@@ -10,20 +10,8 @@ use Symfony\Component\HttpKernel\Exception\HttpResponseException;
 
 class Authenticate extends Middleware
 {
-    /**
-     * Get the path the user should be redirected to when they are not authenticated.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return string|null
-     */
     protected function redirectTo($request)
     {
-        // if (!$request->expectsJson()) {
-        //     // return route('login');
-
-        //     // I want to send a json response from here
-        //     return response()->json(['error' => 'Unauthenticated'], 401);
-        // }
     }
 
     public function handle($request, Closure $next, ...$guards)
