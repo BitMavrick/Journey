@@ -5,6 +5,11 @@
                 <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
                     <div class="card col-lg-4 mx-auto">
                         <div class="card-body px-5 py-5">
+                            <p class="terms">
+                                <img src="assets/images/logo.svg" alt="logo" style="width: 200px; height: 40px;" />
+                            </p>
+                            <br>
+                            <br>
                             <h3 class="card-title text-left mb-3">Login</h3>
                             <form @submit.prevent="submit">
                                 <div class="form-group">
