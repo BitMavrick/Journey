@@ -29,5 +29,46 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
+export default {
+  name: "Home",
+  setup() {
+    const message = ref('Your are not logged in.');
+    const store = useStore();
+    const router = useRouter();
+
+    onMounted(async () => {
+      try {
+        const response = await fetch('http://localhost:8000/api/user', {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include',
+        });
+
+        // Log the fetched data to the console
+        const data = await response.json();
+        console.log('Fetched data:', data.error);
+
+        if (data.error) {
+          console.log("Hello");
+          router.push('/login');
+        }
+
+        await store.dispatch('setAuth', true)
+      } catch (e) {
+        router.push('/login');
+        await store.dispatch('setAuth', false)
+      }
+    });
+
+    return {
+      message
+    }
+  },
+};
 </script>
+
