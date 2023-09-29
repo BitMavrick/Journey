@@ -17,6 +17,7 @@
 import Sidebar from '@/components/Sidebar.vue'
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
+import { useStore } from 'vuex';
 
 export default {
   name: 'App',
@@ -25,18 +26,33 @@ export default {
     Navbar,
     Footer,
   },
+  setup() {
+    const store = useStore();
+
+    // Check if the user is authenticated
+    store.dispatch('checkAuth');
+
+    return {
+      store,
+    }
+  },
+
   computed: {
+    authenticated() {
+      // Get the authenticated state from the store
+      return this.store.state.authenticated;
+    },
     showSidebar() {
-      // Determine whether to show the sidebar based on the current route
-      return this.$route.name !== 'login' && this.$route.name !== 'signup';
+      // Determine whether to show the sidebar based on the current route and authentication state
+      return this.authenticated && this.$route.name !== 'login' && this.$route.name !== 'signup';
     },
     showNavbar() {
-      // Determine whether to show the navbar based on the current route
-      return this.$route.name !== 'login' && this.$route.name !== 'signup';
+      // Determine whether to show the navbar based on the current route and authentication state
+      return this.authenticated && this.$route.name !== 'login' && this.$route.name !== 'signup';
     },
     showAdditionalClass() {
-      // Determine whether to add the additional class based on the current route
-      return this.$route.name === 'login' || this.$route.name === 'signup';
+      // Determine whether to add the additional class based on the current route and authentication state
+      return !this.authenticated && (this.$route.name === 'login' || this.$route.name === 'signup');
     },
   }
 }
