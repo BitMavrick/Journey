@@ -54,7 +54,6 @@ export default {
         console.log('Fetched data:', data.error);
 
         if (data.error) {
-          console.log("Hello");
           router.push('/login');
         }
 
