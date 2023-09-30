@@ -37,7 +37,7 @@
                             </div>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
+                        <router-link to="/login" class="dropdown-item preview-item" @click="logout">
                             <div class="preview-thumbnail">
                                 <div class="preview-icon bg-dark rounded-circle">
                                     <i class="mdi mdi-logout text-danger"></i>
@@ -46,7 +46,7 @@
                             <div class="preview-item-content">
                                 <p class="preview-subject mb-1">Log out</p>
                             </div>
-                        </a>
+                        </router-link>
                         <div class="dropdown-divider"></div>
                         <p class="p-3 mb-0 text-center">Advanced settings</p>
                     </div>
@@ -59,3 +59,34 @@
         </div>
     </nav>
 </template>
+
+<script>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+
+export default {
+    name: "NavComponents",
+    setup() {
+        const store = useStore();
+        const auth = computed(() => store.state.authenticated);
+
+        const logout = async () => {
+            await fetch('http://localhost:8000/api/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+            });
+
+            await store.dispatch('setAuth', false);
+        }
+
+        return {
+            auth,
+            logout
+        }
+    },
+};
+
+</script>
